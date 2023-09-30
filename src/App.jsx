@@ -7,19 +7,54 @@ import Experience from "./pages/Experience";
 import Skills from "./pages/Skills";
 import Interest from "./pages/Interest";
 import Awards from "./pages/Awards";
+import { getData } from "./utils/data";
 
 export class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      navigate: [
+        {
+          label: "Home",
+          to: "/",
+          element: <Home data={getData().data.myDetails} />,
+        },
+        {
+          label: "About",
+          to: "/about",
+          element: <About data={getData().data.myDetails} />,
+        },
+        {
+          label: "Experience",
+          to: "/experience",
+          element: <Experience />,
+        },
+        {
+          label: "Skills",
+          to: "/skills",
+          element: <Skills />,
+        },
+        {
+          label: "Interest",
+          to: "/interest",
+          element: <Interest />,
+        },
+        {
+          label: "Awards",
+          to: "/awards",
+          element: <Awards />,
+        },
+      ],
+    };
+  }
   render() {
     return (
       <>
-        <Navbar />
+        <Navbar navigate={this.state.navigate} />
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/experience" element={<Experience />} />
-          <Route path="/skills" element={<Skills />} />
-          <Route path="/interest" element={<Interest />} />
-          <Route path="/awards" element={<Awards />} />
+          {this.state.navigate.map(({ to, element }, index) => (
+            <Route key={index} path={to} element={element} />
+          ))}
         </Routes>
       </>
     );

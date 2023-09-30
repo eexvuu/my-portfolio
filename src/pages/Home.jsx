@@ -1,20 +1,21 @@
 import React, { Component } from "react";
-import { getData } from "../utils/data";
 
 export class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      data: getData(),
+      details: this.props.data,
     };
-  }
-  componentDidMount() {
-    console.log(this.state.data);
   }
   render() {
     return (
         <>
-        <div className='bg-blue-500 h-screen flex justify-center items-center text-white font-bold text-2xl'>home</div>
+        <div className='bg-blue-500 h-screen flex flex-col justify-center items-center text-white font-bold text-2xl'>
+          <p>{ this.state.details.name}</p>
+          <p>{ this.state.details.urlProfile}</p>
+          <p>{ this.state.details.about}</p>
+          <p>{ this.state.details.interest}</p>
+        </div>
         </>
     );
   }
