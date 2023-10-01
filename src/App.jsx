@@ -8,8 +8,12 @@ import Skills from "./pages/Skills";
 import Interest from "./pages/Interest";
 import Awards from "./pages/Awards";
 import { getData } from "./utils/data";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { fab } from "@fortawesome/free-brands-svg-icons";
+import { fas } from "@fortawesome/free-solid-svg-icons";
+import { far } from "@fortawesome/free-regular-svg-icons";
 
-export class App extends Component {
+class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -62,3 +66,4 @@ export class App extends Component {
 }
 
 export default App;
+library.add(fab, fas, far);
