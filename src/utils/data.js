@@ -1,11 +1,11 @@
-
+import profile from '../assets/profile.svg'
 const getData = () => {
   return {
     data: {
       myDetails: {
         name: "Usamah Abdul Matin",
-        urlProfile: "/",
-        about: `Halo, saya mahasiswa semester 5 program studi Informatika Universitas Amikom Purwokerto.`,
+        urlProfile: profile,
+        about: `Saya mahasiswa semester 5 program studi Informatika Universitas Amikom Purwokerto.`,
         interest: `Saya tertarik dengan Pengembangan Front End dan Mobile Apps Development menggunakan React.`,
       },
       socialMediaUrls: {

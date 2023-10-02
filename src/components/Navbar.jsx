@@ -14,12 +14,20 @@ export class Navbar extends Component {
   render() {
     return (
       <>
-        <div className="absolute m-auto left-0 right-0  ">
-          <div className="md:flex md:items-center md:justify-between md:bg-white md:py-6 md:px-8">
-            <div className=" flex justify-between items-center bg-white px-8 py-6 md:py-0 md:px-0">
+        <div className="absolute z-50 left-0 right-0 drop-shadow-xl backdrop-blur-md bg-white/20">
+          <div className="md:flex md:items-center md:justify-between  md:py-8 md:px-8">
+            <div className=" flex justify-between items-center  px-8 py-8 md:py-0 md:px-0 ">
               <div>
                 <Link to="/" onClick={() => this.setState({ isOpen: false })}>
-                  Logo
+                  <FontAwesomeIcon
+                    icon="fa-solid fa-rocket"
+                    color="orange"
+                    size="xl"
+                    fade
+                  />
+                  <span className="text-xl text-white font-bold ml-2">
+                    USAMAH
+                  </span>
                 </Link>
               </div>
               <button
@@ -27,15 +35,23 @@ export class Navbar extends Component {
                 onClick={() => this.setState({ isOpen: !this.state.isOpen })}
               >
                 {this.state.isOpen ? (
-                  <FontAwesomeIcon icon="fa-solid fa-xmark" />
+                  <FontAwesomeIcon
+                    icon="fa-solid fa-xmark"
+                    color="white"
+                    size="xl"
+                  />
                 ) : (
-                  <FontAwesomeIcon icon="fa-solid fa-bars" />
+                  <FontAwesomeIcon
+                    icon="fa-solid fa-bars"
+                    color="white"
+                    size="xl"
+                  />
                 )}
               </button>
             </div>
             <div>
               <div
-                className={`flex flex-col  bg-white w-full  ${
+                className={`flex flex-col  w-full  ${
                   this.state.isOpen ? "block md:block" : "hidden md:block "
                 }`}
               >
@@ -46,8 +62,8 @@ export class Navbar extends Component {
                     to={to}
                     className={({ isActive }) =>
                       isActive
-                        ? "bg-red-500 py-6 px-8 text-white md:rounded-md md:px-4 md:py-2"
-                        : "md:px-4 md:py-2 text-blue-500 py-6 px-8"
+                        ? " py-6 px-8 text-slate-800 md:rounded-md md:px-4 md:py-2 bg-orange-300 font-bold"
+                        : "md:px-4 md:py-2 text-white py-6 px-8"
                     }
                   >
                     {label}

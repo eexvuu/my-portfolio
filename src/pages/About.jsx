@@ -9,8 +9,9 @@ export class About extends Component {
   }
   render() {
     return (
-      <div className="bg-blue-500 h-screen flex justify-center items-center text-white font-bold text-2xl">
-        <h1>{this.state.details.name}</h1>
+      <div className="bg-slate-800 h-screen flex justify-center items-center text-white font-bold text-2xl">
+        {/* <h1>{this.state.details.name}</h1> */}
+        <h1>About</h1>
       </div>
     );
   }
