@@ -12,6 +12,7 @@ import { library } from "@fortawesome/fontawesome-svg-core";
 import { fab } from "@fortawesome/free-brands-svg-icons";
 import { fas } from "@fortawesome/free-solid-svg-icons";
 import { far } from "@fortawesome/free-regular-svg-icons";
+import ErrorPage from "./pages/ErrorPage";
 
 class App extends Component {
   constructor(props) {
@@ -26,27 +27,27 @@ class App extends Component {
         {
           label: "About",
           to: "/about",
-          element: <About data={getData().data.myDetails} />,
+          element: <About data={getData().data} />,
         },
         {
           label: "Experience",
           to: "/experience",
-          element: <Experience />,
+          element: <Experience data={getData().data.workDetails}/>,
         },
         {
           label: "Skills",
           to: "/skills",
-          element: <Skills />,
+          element: <Skills data={getData().data}/>,
         },
         {
           label: "Interest",
           to: "/interest",
-          element: <Interest />,
+          element: <Interest data={getData().data}/>,
         },
         {
           label: "Awards",
           to: "/awards",
-          element: <Awards />,
+          element: <Awards data={getData().data.awards}/>,
         },
       ],
     };
@@ -59,6 +60,7 @@ class App extends Component {
           {this.state.navigate.map(({ to, element }, index) => (
             <Route key={index} path={to} element={element} />
           ))}
+          <Route path="*" element={<ErrorPage />} />
         </Routes>
       </>
     );

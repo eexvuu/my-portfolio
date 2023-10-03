@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Typewriter from "typewriter-effect";
 
-export class Home extends Component {
+class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -16,7 +16,7 @@ export class Home extends Component {
             <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16">
               <div className="relative h-64 overflow-hidden rounded-lg sm:h-80 lg:order-last lg:h-full">
                 <img
-                  alt="Party"
+                  alt="profile"
                   src={this.state.details.urlProfile}
                   className="absolute inset-0 h-full w-full object-cover"
                 />

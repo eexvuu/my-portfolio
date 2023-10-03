@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { NavLink, Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-export class Navbar extends Component {
+class Navbar extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -14,8 +14,8 @@ export class Navbar extends Component {
   render() {
     return (
       <>
-        <div className="absolute z-50 left-0 right-0 drop-shadow-xl backdrop-blur-md bg-white/20">
-          <div className="md:flex md:items-center md:justify-between  md:py-8 md:px-8">
+        <div className="absolute z-50 left-0 right-0  top-0 drop-shadow-xl backdrop-blur-lg bg-white/20">
+          <div className="md:flex md:items-center md:justify-between  md:py-8  container mx-auto">
             <div className=" flex justify-between items-center  px-8 py-8 md:py-0 md:px-0 ">
               <div>
                 <Link to="/" onClick={() => this.setState({ isOpen: false })}>
@@ -63,7 +63,7 @@ export class Navbar extends Component {
                     className={({ isActive }) =>
                       isActive
                         ? " py-6 px-8 text-slate-800 md:rounded-md md:px-4 md:py-2 bg-orange-300 font-bold"
-                        : "md:px-4 md:py-2 text-white py-6 px-8"
+                        : "md:px-4 md:py-2 text-white py-6 px-8 font-bold"
                     }
                   >
                     {label}
