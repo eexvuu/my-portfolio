@@ -2,8 +2,7 @@ import { Component } from "react";
 import Title from "../components/Title";
 import Container from "../components/Container";
 import Wrapper from "../components/Wrapper";
-import ImageGallery from "../components/ImageGallery";
-import GridLayout from "../components/GridLayout";
+import GridLayout from "../components/imageGallery/GridLayout";
 
 class Interest extends Component {
   constructor(props) {
@@ -18,11 +17,7 @@ class Interest extends Component {
         <Container>
           <Wrapper>
             <Title>Interest</Title>
-            <GridLayout>
-              {Object.keys(this.state.interest).map((key) => (
-                <ImageGallery key={key} src={this.state.interest[key]} />
-              ))}
-            </GridLayout>
+            <GridLayout data={this.state.interest} />
           </Wrapper>
         </Container>
       </>

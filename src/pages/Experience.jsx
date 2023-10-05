@@ -3,7 +3,6 @@ import Title from "../components/Title";
 import Container from "../components/Container";
 import Wrapper from "../components/Wrapper";
 import BoxWrapper from "../components/boxDetail/BoxWrapper";
-import BoxApp from "../components/boxDetail/BoxApp";
 
 class Experience extends Component {
   constructor(props) {
@@ -18,20 +17,7 @@ class Experience extends Component {
         <Container>
           <Wrapper>
             <Title>Experience</Title>
-            <BoxWrapper>
-              {this.state.data.map(
-                ({ Position, Company, Location, Type, Duration }, index) => (
-                  <BoxApp
-                    key={index}
-                    position={Position}
-                    company={Company}
-                    location={Location}
-                    type={Type}
-                    duration={Duration}
-                  />
-                )
-              )}
-            </BoxWrapper>
+            <BoxWrapper data={this.state.data} />
           </Wrapper>
         </Container>
       </>
