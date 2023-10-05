@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import { Component } from "react";
 import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
@@ -14,6 +14,8 @@ import { fas } from "@fortawesome/free-solid-svg-icons";
 import { far } from "@fortawesome/free-regular-svg-icons";
 import ErrorPage from "./pages/ErrorPage";
 
+library.add(fab, fas, far);
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -22,7 +24,7 @@ class App extends Component {
         {
           label: "Home",
           to: "/",
-          element: <Home data={getData().data.myDetails} />,
+          element: <Home data={getData().data} />,
         },
         {
           label: "About",
@@ -32,22 +34,22 @@ class App extends Component {
         {
           label: "Experience",
           to: "/experience",
-          element: <Experience data={getData().data.workDetails}/>,
+          element: <Experience data={getData().data} />,
         },
         {
           label: "Skills",
           to: "/skills",
-          element: <Skills data={getData().data}/>,
+          element: <Skills data={getData().data} />,
         },
         {
           label: "Interest",
           to: "/interest",
-          element: <Interest data={getData().data}/>,
+          element: <Interest data={getData().data} />,
         },
         {
           label: "Awards",
           to: "/awards",
-          element: <Awards data={getData().data.awards}/>,
+          element: <Awards data={getData().data} />,
         },
       ],
     };
@@ -68,4 +70,3 @@ class App extends Component {
 }
 
 export default App;
-library.add(fab, fas, far);

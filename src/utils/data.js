@@ -33,7 +33,7 @@ const getData = () => {
       workDetails: [
         {
           Position:
-            "Studi Independen - React and React Native for Front End Developer",
+            "React and React Native for Front End Developer",
           Company: `Hacktiv8 Indonesia`,
           Location: "Jakarta Selatan, Indonesia",
           Type: "Seasonal",

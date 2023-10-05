@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import { Component } from "react";
 import { NavLink, Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -14,9 +14,9 @@ class Navbar extends Component {
   render() {
     return (
       <>
-        <div className="absolute z-50 left-0 right-0  top-0 drop-shadow-xl backdrop-blur-lg bg-white/20">
+        <div className="absolute z-50 left-0 right-0  top-0 drop-shadow-xl backdrop-blur-2xl bg-white/20">
           <div className="md:flex md:items-center md:justify-between  md:py-8  container mx-auto">
-            <div className=" flex justify-between items-center  px-8 py-8 md:py-0 md:px-0 ">
+            <div className=" flex justify-between items-center  px-8 py-8 md:py-0 ">
               <div>
                 <Link to="/" onClick={() => this.setState({ isOpen: false })}>
                   <FontAwesomeIcon
@@ -51,7 +51,7 @@ class Navbar extends Component {
             </div>
             <div>
               <div
-                className={`flex flex-col  w-full  ${
+                className={`flex flex-col  w-full px-0 md:px-8  ${
                   this.state.isOpen ? "block md:block" : "hidden md:block "
                 }`}
               >
