@@ -26,7 +26,6 @@ class About extends Component {
               about={this.state.details.about}
               interest={this.state.details.interest}
             />
-            
             <Title>Education</Title>
             <BoxWrapper data={this.state.educationDetails} />
           </Wrapper>

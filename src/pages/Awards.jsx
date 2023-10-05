@@ -11,10 +11,6 @@ class Awards extends Component {
       data: this.props.data.awards,
     };
   }
-
-  componentDidMount() {
-    console.log(this.state.data);
-  }
   render() {
     return (
       <Container>
